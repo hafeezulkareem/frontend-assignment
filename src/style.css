@@ -69,10 +69,11 @@ tbody tr:hover {
 }
 
 #pagination {
+   width: 100%;
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
-   margin-top: 20px;
+   margin-top: 16px;
    gap: 10px;
 }
 

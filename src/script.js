@@ -25,7 +25,6 @@ function createButton(content, onClick, isActive = false) {
 }
 
 function renderPagination(pagination, onClickPrev, onClickPage, onClickNext) {
-   console.log("🚀 ~ renderPagination ~ pagination:", pagination);
    const { totalItems, itemsPerPage, currentPage } = pagination;
 
    const paginationWrapper = document.getElementById("pagination");
