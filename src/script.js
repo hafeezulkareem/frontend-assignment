@@ -70,11 +70,9 @@ function render(data) {
       totalItems: data.length,
    };
 
-   const { currentPage, itemsPerPage, totalItems } = pagination;
-
    function getPageData() {
-      const start = currentPage * itemsPerPage;
-      return data.slice(start, start + itemsPerPage);
+      const start = pagination.currentPage * pagination.itemsPerPage;
+      return data.slice(start, start + pagination.itemsPerPage);
    }
 
    function renderContent() {
@@ -83,13 +81,17 @@ function render(data) {
    }
 
    function onClickPage(page) {
-      if (page === currentPage) return;
+      if (page === pagination.currentPage) return;
       pagination.currentPage = page;
       renderContent();
    }
 
    function onClickNext() {
-      if (currentPage >= Math.floor(totalItems / itemsPerPage)) return;
+      if (
+         pagination.currentPage >=
+         Math.floor(pagination.totalItems / pagination.itemsPerPage)
+      )
+         return;
       pagination.currentPage++;
       renderContent();
    }
